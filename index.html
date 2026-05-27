@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Sources Hub</title>
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-light">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="brand-mark">LS</span>
+      <div class="brand-copy">
+        <p class="topbar__eyebrow">Curated learning directory</p>
+        <h1>Learning Sources Hub</h1>
+      </div>
+    </div>
+
+    <nav class="topbar__nav" aria-label="Primary">
+      <div class="header-controls">
+        <label class="search search--compact">
+          <span class="sr-only">Search resources</span>
+          <input id="searchInput" type="search" placeholder="Search resources" />
+        </label>
+        <label class="search search--compact">
+          <span class="sr-only">Filter by category</span>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
+      </div>
+      <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+        <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
+        <span class="theme-switch__label" id="themeLabel">Light</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <aside class="drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <strong>Menu</strong>
+      <button class="drawer__close" id="drawerClose" type="button">Close</button>
+    </div>
+    <div class="drawer-section">
+      <label class="search search--compact">
+        <span class="sr-only">Search resources</span>
+        <input id="drawerSearchInput" type="search" placeholder="Search resources" />
+      </label>
+      <label class="search search--compact">
+        <span class="sr-only">Filter by category</span>
+        <select id="drawerCategoryFilter">
+          <option value="all">All categories</option>
+        </select>
+      </label>
+      <div class="drawer-categories">
+        <p class="drawer-categories__title">Categories</p>
+        <div id="drawerCategoryLinks"></div>
+      </div>
+    </div>
+    <button class="theme-switch theme-switch--drawer" id="drawerThemeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+      <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
+      <span class="theme-switch__label" id="drawerThemeLabel">Light</span>
+    </button>
+  </aside>
+
+  <main class="shell">
+    <section class="section section--summary" id="resources">
+      <div class="section__head">
+        <div>
+          <h2>Resources</h2>
+          <p>Click a card to open the source in a new tab.</p>
+        </div>
+        <p class="results" id="resultsMeta"></p>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No resources match your search or filter.</p>
+    </section>
+
+    <div class="layout">
+      <aside class="section category-sidebar" aria-label="Category navigation">
+        <h3>Categories</h3>
+        <nav id="categoryLinks"></nav>
+      </aside>
+      <div class="content-column">
+        <div id="resourceSections"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>Learning Sources Hub - Built as a static resource directory.</p>
+      <div class="footer__links">
+        <a href="https://forms.gle/" id="suggestions" target="_blank" rel="noreferrer">Suggestion Form</a>
+        <a href="https://forms.gle/" id="feedback" target="_blank" rel="noreferrer">Feedback Form</a>
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/your-username" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

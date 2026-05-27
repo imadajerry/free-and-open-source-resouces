@@ -1,0 +1,208 @@
+{
+  "sections": [
+    {
+      "category": "Coding Practice",
+      "description": "Interactive platforms to practice coding, problem solving, and improve programming skills.",
+      "resources": [
+        {
+          "title": "LeetCode",
+          "url": "https://leetcode.com",
+          "type": "FREE",
+          "description": "Coding problems, DSA, interview prep, and contests."
+        },
+        {
+          "title": "Codewars",
+          "url": "https://www.codewars.com",
+          "type": "FREE",
+          "description": "Gamified coding challenges called kata with rankings."
+        },
+        {
+          "title": "Exercism",
+          "url": "https://exercism.org",
+          "type": "FREE",
+          "description": "Practice programming languages through exercises and mentorship."
+        },
+        {
+          "title": "HackerRank",
+          "url": "https://www.hackerrank.com",
+          "type": "FREE",
+          "description": "Coding practice, SQL, certifications, and interview preparation."
+        },
+        {
+          "title": "CodingBat",
+          "url": "https://codingbat.com",
+          "type": "FREE",
+          "description": "Beginner-friendly Java and Python exercises."
+        },
+        {
+          "title": "Edabit",
+          "url": "https://edabit.com",
+          "type": "FREEMIUM",
+          "description": "Gamified coding exercises and challenges."
+        }
+      ]
+    },
+    {
+      "category": "Competitive Programming",
+      "description": "Platforms for contests, rankings, and algorithmic problem solving.",
+      "resources": [
+        {
+          "title": "Codeforces",
+          "url": "https://codeforces.com",
+          "type": "FREE",
+          "description": "Competitive programming contests with a strong community."
+        },
+        {
+          "title": "CodeChef",
+          "url": "https://www.codechef.com",
+          "type": "FREE",
+          "description": "Programming contests and practice problems."
+        },
+        {
+          "title": "AtCoder",
+          "url": "https://atcoder.jp",
+          "type": "FREE",
+          "description": "Well-structured competitive programming contests."
+        },
+        {
+          "title": "TopCoder",
+          "url": "https://www.topcoder.com",
+          "type": "FREE",
+          "description": "Competitive programming plus freelance opportunities."
+        },
+        {
+          "title": "CSES Problem Set",
+          "url": "https://cses.fi/problemset/",
+          "type": "FREE",
+          "description": "Structured collection of competitive programming problems."
+        },
+        {
+          "title": "Kattis",
+          "url": "https://open.kattis.com",
+          "type": "FREE",
+          "description": "Programming contest problems used by universities."
+        }
+      ]
+    },
+    {
+      "category": "Interactive Learning",
+      "description": "Hands-on websites for learning programming and building projects interactively.",
+      "resources": [
+        {
+          "title": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org",
+          "type": "FREE",
+          "description": "Interactive curriculum for web development and programming."
+        },
+        {
+          "title": "Scrimba",
+          "url": "https://scrimba.com",
+          "type": "FREEMIUM",
+          "description": "Interactive coding lessons with live editable code."
+        },
+        {
+          "title": "Codecademy",
+          "url": "https://www.codecademy.com",
+          "type": "FREEMIUM",
+          "description": "Browser-based interactive coding lessons."
+        },
+        {
+          "title": "The Odin Project",
+          "url": "https://www.theodinproject.com",
+          "type": "FREE",
+          "description": "Project-based full-stack web development curriculum."
+        },
+        {
+          "title": "Full Stack Open",
+          "url": "https://fullstackopen.com",
+          "type": "FREE",
+          "description": "University-level full-stack web development course."
+        },
+        {
+          "title": "Frontend Mentor",
+          "url": "https://www.frontendmentor.io",
+          "type": "FREEMIUM",
+          "description": "Real-world frontend projects based on UI designs."
+        },
+        {
+          "title": "DevChallenges",
+          "url": "https://devchallenges.io",
+          "type": "FREEMIUM",
+          "description": "Frontend, backend, and full-stack coding challenges."
+        }
+      ]
+    },
+    {
+      "category": "Cybersecurity Labs",
+      "description": "Interactive labs and capture-the-flag platforms for cybersecurity learning.",
+      "resources": [
+        {
+          "title": "TryHackMe",
+          "url": "https://tryhackme.com",
+          "type": "FREEMIUM",
+          "description": "Beginner-friendly guided cybersecurity labs."
+        },
+        {
+          "title": "Hack The Box",
+          "url": "https://www.hackthebox.com",
+          "type": "FREEMIUM",
+          "description": "Hands-on cybersecurity challenges and labs."
+        },
+        {
+          "title": "PortSwigger Web Security Academy",
+          "url": "https://portswigger.net/web-security",
+          "type": "FREE",
+          "description": "Interactive web security labs."
+        },
+        {
+          "title": "OverTheWire",
+          "url": "https://overthewire.org",
+          "type": "FREE",
+          "description": "Wargames for Linux and security learning."
+        },
+        {
+          "title": "PicoCTF",
+          "url": "https://picoctf.org",
+          "type": "FREE",
+          "description": "Beginner-friendly cybersecurity competitions."
+        }
+      ]
+    },
+    {
+      "category": "Hackathons & Community",
+      "description": "Platforms where students can participate in hackathons, projects, and events.",
+      "resources": [
+        {
+          "title": "Devpost",
+          "url": "https://devpost.com",
+          "type": "FREE",
+          "description": "Hackathons and project submission platform."
+        },
+        {
+          "title": "Major League Hacking (MLH)",
+          "url": "https://mlh.io",
+          "type": "FREE",
+          "description": "Student hackathons and developer community."
+        },
+        {
+          "title": "Lablab.ai",
+          "url": "https://lablab.ai",
+          "type": "FREE",
+          "description": "AI-focused hackathons and collaborative building."
+        },
+        {
+          "title": "Google Developer Groups",
+          "url": "https://gdg.community.dev",
+          "type": "FREE",
+          "description": "Developer communities, meetups, and events."
+        },
+        {
+          "title": "Microsoft Reactor",
+          "url": "https://developer.microsoft.com/reactor/",
+          "type": "FREE",
+          "description": "Tech workshops, community sessions, and events."
+        }
+      ]
+    }
+  ]
+}
