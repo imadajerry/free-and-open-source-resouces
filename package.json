@@ -1,0 +1,12 @@
+{
+  "name": "learning-sources-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static learning resources directory with GitHub Pages deployment.",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}

@@ -1,0 +1,242 @@
+{
+  "sections": [
+    {
+      "category": "Programming Fundamentals",
+      "description": "Start here if you want the basics, practice, and beginner-friendly explanations.",
+      "resources": [
+        {
+          "title": "freeCodeCamp",
+          "url": "https://www.freecodecamp.org",
+          "type": "FREE",
+          "description": "Beginner programming, web dev, JavaScript, and Python."
+        },
+        {
+          "title": "CS50",
+          "url": "https://cs50.harvard.edu",
+          "type": "FREE",
+          "description": "Harvard's introduction to computer science fundamentals."
+        },
+        {
+          "title": "Programming with Mosh",
+          "url": "https://www.youtube.com/c/programmingwithmosh",
+          "type": "FREE",
+          "description": "Clear beginner-friendly explanations on YouTube."
+        },
+        {
+          "title": "Exercism",
+          "url": "https://exercism.org",
+          "type": "FREE",
+          "description": "Practice language skills through exercises and mentoring."
+        },
+        {
+          "title": "Roadmap.sh",
+          "url": "https://roadmap.sh",
+          "type": "FREE",
+          "description": "Structured learning paths for different roles and stacks."
+        },
+        {
+          "title": "W3Schools",
+          "url": "https://www.w3schools.com",
+          "type": "FREE",
+          "description": "Quick reference for beginners and rapid lookup."
+        },
+        {
+          "title": "GeeksforGeeks",
+          "url": "https://www.geeksforgeeks.org",
+          "type": "FREE",
+          "description": "Concepts and interview prep."
+        },
+        {
+          "title": "Educative",
+          "url": "https://www.educative.io",
+          "type": "FREEMIUM",
+          "description": "Hands-on courses and coding paths."
+        },
+        {
+          "title": "Frontend Masters",
+          "url": "https://frontendmasters.com",
+          "type": "FREEMIUM",
+          "description": "Advanced front-end education."
+        }
+      ]
+    },
+    {
+      "category": "Computer Science",
+      "description": "Good options for deeper theory, structured courses, and classic CS foundations.",
+      "resources": [
+        { "title": "OSSU Computer Science", "url": "https://github.com/ossu/computer-science", "type": "FREE", "description": "A full open-source curriculum for self-taught CS learners." },
+        { "title": "MIT OpenCourseWare", "url": "https://ocw.mit.edu", "type": "FREE", "description": "High-quality course material from MIT." },
+        { "title": "Teach Yourself CS", "url": "https://teachyourselfcs.com", "type": "FREE", "description": "A recommended roadmap for serious CS self-study." },
+        { "title": "Nand2Tetris", "url": "https://www.nand2tetris.org", "type": "FREE", "description": "Build a computer and software stack from first principles." },
+        { "title": "Stanford Engineering Everywhere", "url": "https://see.stanford.edu", "type": "FREE", "description": "Free Stanford course materials." }
+      ]
+    },
+    {
+      "category": "Web Development",
+      "description": "Front-end learning, UI practice, and modern web platform references.",
+      "resources": [
+        { "title": "The Odin Project", "url": "https://www.theodinproject.com", "type": "FREE", "description": "Project-based path for full-stack web development." },
+        { "title": "MDN Web Docs", "url": "https://developer.mozilla.org", "type": "FREE", "description": "Authoritative documentation for HTML, CSS, and JavaScript." },
+        { "title": "Frontend Mentor", "url": "https://www.frontendmentor.io", "type": "FREE", "description": "Design-to-code challenges for real-world practice." },
+        { "title": "web.dev", "url": "https://web.dev", "type": "FREE", "description": "Performance, accessibility, and modern web guidance." },
+        { "title": "JavaScript.info", "url": "https://javascript.info", "type": "FREE", "description": "Deep and practical JavaScript tutorials." },
+        { "title": "CSS Tricks", "url": "https://css-tricks.com", "type": "FREE", "description": "Practical CSS and front-end articles." },
+        { "title": "Kevin Powell", "url": "https://www.youtube.com/@KevinPowell", "type": "FREE", "description": "CSS-focused YouTube content." },
+        { "title": "Traversy Media", "url": "https://www.youtube.com/@TraversyMedia", "type": "FREE", "description": "Web dev tutorials and project walkthroughs." },
+        { "title": "SuperSimpleDev", "url": "https://www.youtube.com/@SuperSimpleDev", "type": "FREE", "description": "Beginner-friendly web development lessons." },
+        { "title": "Scrimba", "url": "https://scrimba.com", "type": "FREEMIUM", "description": "Interactive front-end courses." }
+      ]
+    },
+    {
+      "category": "JavaScript / TypeScript",
+      "description": "Focused resources for language mastery and practical depth.",
+      "resources": [
+        { "title": "JavaScript.info", "url": "https://javascript.info", "type": "FREE", "description": "Deep and practical JavaScript tutorials." },
+        { "title": "Eloquent JavaScript", "url": "https://eloquentjavascript.net", "type": "FREE", "description": "A classic book for learning JavaScript deeply." },
+        { "title": "You Don't Know JS", "url": "https://github.com/getify/You-Dont-Know-JS", "type": "FREE", "description": "Essential reading for advanced JavaScript understanding." },
+        { "title": "TypeScript Docs", "url": "https://www.typescriptlang.org/docs/", "type": "FREE", "description": "The official docs for the TypeScript language." },
+        { "title": "TypeHero", "url": "https://typehero.dev", "type": "FREE", "description": "Practice TypeScript through hands-on challenges." },
+        { "title": "Total TypeScript", "url": "https://www.totaltypescript.com", "type": "FREEMIUM", "description": "Strong TypeScript learning content." }
+      ]
+    },
+    {
+      "category": "React / Frontend",
+      "description": "React and modern frontend docs, blogs, and practice resources.",
+      "resources": [
+        { "title": "React Docs", "url": "https://react.dev", "type": "FREE", "description": "Official React documentation." },
+        { "title": "Next.js Docs", "url": "https://nextjs.org/docs", "type": "FREE", "description": "Official Next.js documentation." },
+        { "title": "Epic React Free Resources", "url": "https://epicreact.dev", "type": "FREE", "description": "Free React learning resources." },
+        { "title": "Frontend Mentor", "url": "https://frontendmentor.io", "type": "FREE", "description": "Practice building front-end projects." },
+        { "title": "Josh Comeau Blog", "url": "https://www.joshwcomeau.com", "type": "FREE", "description": "Deep dives on frontend engineering." },
+        { "title": "ui.dev Blog", "url": "https://ui.dev", "type": "FREE", "description": "Frontend and React articles." },
+        { "title": "Epic React", "url": "https://epicreact.dev", "type": "FREEMIUM", "description": "Premium React training." },
+        { "title": "Frontend Masters", "url": "https://frontendmasters.com", "type": "FREEMIUM", "description": "Advanced front-end education." }
+      ]
+    },
+    {
+      "category": "Backend / APIs",
+      "description": "Documentation and tutorials for server-side and API workflows.",
+      "resources": [
+        { "title": "Node.js Docs", "url": "https://nodejs.org", "type": "FREE", "description": "Official runtime documentation." },
+        { "title": "Express.js Docs", "url": "https://expressjs.com", "type": "FREE", "description": "Minimal web framework documentation." },
+        { "title": "REST API Tutorial", "url": "https://restfulapi.net", "type": "FREE", "description": "Learn API design concepts and patterns." },
+        { "title": "Postman Learning Center", "url": "https://learning.postman.com", "type": "FREE", "description": "API testing and collaboration resources." },
+        { "title": "FastAPI Docs", "url": "https://fastapi.tiangolo.com", "type": "FREE", "description": "Modern Python API framework docs." },
+        { "title": "Supabase Docs", "url": "https://supabase.com/docs", "type": "FREE", "description": "Backend-as-a-service docs." },
+        { "title": "Firebase Docs", "url": "https://firebase.google.com/docs", "type": "FREE", "description": "Google's app development platform docs." },
+        { "title": "Appwrite Docs", "url": "https://appwrite.io/docs", "type": "FREE", "description": "Backend server docs." },
+        { "title": "ByteByteGo", "url": "https://bytebytego.com", "type": "FREEMIUM", "description": "Architecture and system design content." }
+      ]
+    },
+    {
+      "category": "Databases / SQL",
+      "description": "Use these to learn SQL, database internals, and data tooling.",
+      "resources": [
+        { "title": "SQLBolt", "url": "https://sqlbolt.com", "type": "FREE", "description": "Interactive SQL lessons for beginners." },
+        { "title": "Mode SQL Tutorial", "url": "https://mode.com/sql-tutorial", "type": "FREE", "description": "Practical SQL learning with examples." },
+        { "title": "PostgreSQL Docs", "url": "https://www.postgresql.org/docs", "type": "FREE", "description": "Official database documentation." },
+        { "title": "MongoDB University", "url": "https://learn.mongodb.com", "type": "FREE", "description": "Courses and labs for MongoDB." },
+        { "title": "Prisma Docs", "url": "https://www.prisma.io/docs", "type": "FREE", "description": "ORM and data access docs." },
+        { "title": "Supabase Docs", "url": "https://supabase.com/docs", "type": "FREE", "description": "Backend and database tooling docs." }
+      ]
+    },
+    {
+      "category": "AI / Machine Learning",
+      "description": "Introductory courses, applied learning, and practical research-adjacent resources.",
+      "resources": [
+        { "title": "Fast.ai", "url": "https://www.fast.ai", "type": "FREE", "description": "Practical deep learning for coders." },
+        { "title": "DeepLearning.AI Short Courses", "url": "https://www.deeplearning.ai/short-courses/", "type": "FREE", "description": "Short focused courses on modern AI topics." },
+        { "title": "Google ML Crash Course", "url": "https://developers.google.com/machine-learning/crash-course", "type": "FREE", "description": "Machine learning fundamentals from Google." },
+        { "title": "Kaggle Learn", "url": "https://www.kaggle.com/learn", "type": "FREE", "description": "Hands-on ML lessons and competitions." },
+        { "title": "Andrej Karpathy", "url": "https://www.youtube.com/@AndrejKarpathy", "type": "FREE", "description": "High-signal AI and ML talks." },
+        { "title": "Hugging Face Course", "url": "https://huggingface.co/learn", "type": "FREE", "description": "Learn transformers and ML tooling." },
+        { "title": "OpenAI Cookbook", "url": "https://cookbook.openai.com", "type": "FREE", "description": "Practical examples for building with OpenAI APIs." },
+        { "title": "Full Stack Deep Learning", "url": "https://fullstackdeeplearning.com", "type": "FREE", "description": "End-to-end deep learning operations content." },
+        { "title": "Coursera (Audit Mode)", "url": "https://coursera.org", "type": "FREEMIUM", "description": "Audit many courses for free." },
+        { "title": "DeepLearning.AI", "url": "https://deeplearning.ai", "type": "FREEMIUM", "description": "AI learning platform and courses." }
+      ]
+    },
+    {
+      "category": "LLMs / Agentic AI",
+      "description": "Resources for prompt engineering, orchestration, and modern AI systems.",
+      "resources": [
+        { "title": "Anthropic Prompt Engineering", "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial", "type": "FREE", "description": "Interactive prompt engineering tutorial." },
+        { "title": "LangChain Docs", "url": "https://python.langchain.com", "type": "FREE", "description": "Framework docs for application development with LLMs." },
+        { "title": "LangGraph Docs", "url": "https://langchain-ai.github.io/langgraph/", "type": "FREE", "description": "Docs for graph-based agent and workflow systems." },
+        { "title": "LlamaIndex Docs", "url": "https://www.llamaindex.ai", "type": "FREE", "description": "Tools for retrieval and data-connected LLM apps." },
+        { "title": "OpenAI Cookbook", "url": "https://cookbook.openai.com", "type": "FREE", "description": "Practical examples for building with OpenAI APIs." },
+        { "title": "Ollama Docs", "url": "https://ollama.com", "type": "FREE", "description": "Run local models and build workflows around them." },
+        { "title": "DSPy", "url": "https://dspy.ai", "type": "FREE", "description": "Programmatic prompt optimization and pipelines." },
+        { "title": "Microsoft AutoGen", "url": "https://microsoft.github.io/autogen", "type": "FREE", "description": "Multi-agent orchestration framework." },
+        { "title": "CrewAI Docs", "url": "https://docs.crewai.com", "type": "FREE", "description": "Docs for agentic workflows." },
+        { "title": "AI Engineering Hub", "url": "https://www.ai.engineer", "type": "FREE", "description": "AI engineering talks and content." },
+        { "title": "Latent Space", "url": "https://www.latent.space", "type": "FREE", "description": "AI engineering media and resources." }
+      ]
+    },
+    {
+      "category": "Git / GitHub",
+      "description": "Version control basics, branching practice, and GitHub learning paths.",
+      "resources": [
+        { "title": "Git Immersion", "url": "https://gitimmersion.com", "type": "FREE", "description": "A guided introduction to Git." },
+        { "title": "Learn Git Branching", "url": "https://learngitbranching.js.org", "type": "FREE", "description": "Interactive Git practice in the browser." },
+        { "title": "GitHub Skills", "url": "https://skills.github.com", "type": "FREE", "description": "Hands-on GitHub learning modules." },
+        { "title": "Pro Git Book", "url": "https://git-scm.com/book", "type": "FREE", "description": "The standard book for Git fundamentals." }
+      ]
+    },
+    {
+      "category": "DevOps / Cloud",
+      "description": "Cloud platforms, containers, infrastructure, and deployment learning.",
+      "resources": [
+        { "title": "Docker Docs", "url": "https://docs.docker.com", "type": "FREE", "description": "Containerization documentation and guides." },
+        { "title": "Kubernetes Docs", "url": "https://kubernetes.io/docs", "type": "FREE", "description": "Official Kubernetes documentation." },
+        { "title": "AWS Skill Builder", "url": "https://skillbuilder.aws", "type": "FREE", "description": "Learning paths for AWS and cloud skills." },
+        { "title": "Google Cloud Skills Boost", "url": "https://www.cloudskillsboost.google", "type": "FREE", "description": "Cloud learning and labs." },
+        { "title": "Microsoft Learn", "url": "https://learn.microsoft.com", "type": "FREE", "description": "Cloud, developer, and platform training." },
+        { "title": "DevOps Roadmap", "url": "https://roadmap.sh/devops", "type": "FREE", "description": "Roadmap for DevOps learning." }
+      ]
+    },
+    {
+      "category": "Cybersecurity",
+      "description": "Free paths and labs for web security, general security, and CTF-style learning.",
+      "resources": [
+        { "title": "TryHackMe", "url": "https://tryhackme.com", "type": "FREE", "description": "Security labs and beginner-friendly paths." },
+        { "title": "Hack The Box Academy", "url": "https://academy.hackthebox.com", "type": "FREE", "description": "Security training and guided modules." },
+        { "title": "PortSwigger Web Security Academy", "url": "https://portswigger.net/web-security", "type": "FREE", "description": "Hands-on web security training." },
+        { "title": "OWASP", "url": "https://owasp.org", "type": "FREE", "description": "Open security standards, guides, and projects." },
+        { "title": "OverTheWire", "url": "https://overthewire.org", "type": "FREE", "description": "Security-oriented wargames and exercises." }
+      ]
+    },
+    {
+      "category": "DSA / Interview Prep",
+      "description": "Practice resources for algorithms, data structures, and interview-style study.",
+      "resources": [
+        { "title": "NeetCode", "url": "https://neetcode.io", "type": "FREE", "description": "Popular study paths and problem sets." },
+        { "title": "LeetCode", "url": "https://leetcode.com", "type": "FREE", "description": "Classic interview practice platform." },
+        { "title": "AlgoMonster", "url": "https://algo.monster", "type": "FREE", "description": "Problem explanations and free learning content." },
+        { "title": "GeeksforGeeks", "url": "https://geeksforgeeks.org", "type": "FREE", "description": "Algorithm and interview prep material." },
+        { "title": "Visualgo", "url": "https://visualgo.net", "type": "FREE", "description": "Visual explanations for algorithms and data structures." },
+        { "title": "Striver DSA Sheet", "url": "https://takeuforward.org", "type": "FREE", "description": "Widely used interview prep sheet." }
+      ]
+    },
+    {
+      "category": "Open Source",
+      "description": "Places to start contributing to open-source projects and issues.",
+      "resources": [
+        { "title": "First Contributions", "url": "https://firstcontributions.github.io", "type": "FREE", "description": "Beginner-friendly open-source contribution guide." },
+        { "title": "Good First Issues", "url": "https://goodfirstissue.dev", "type": "FREE", "description": "Find beginner-friendly issues to work on." },
+        { "title": "Up For Grabs", "url": "https://up-for-grabs.net", "type": "FREE", "description": "Projects that welcome new contributors." },
+        { "title": "Open Source Guides", "url": "https://opensource.guide", "type": "FREE", "description": "General guidance for contributing and maintaining OSS." }
+      ]
+    },
+    {
+      "category": "QA / Testing",
+      "description": "Testing tools and frameworks for browser automation and E2E coverage.",
+      "resources": [
+        { "title": "Playwright Docs", "url": "https://playwright.dev", "type": "FREE", "description": "Modern browser automation and testing docs." },
+        { "title": "Cypress Docs", "url": "https://docs.cypress.io", "type": "FREE", "description": "Docs for frontend testing workflows." },
+        { "title": "Selenium Docs", "url": "https://www.selenium.dev", "type": "FREE", "description": "Browser automation for multiple languages." },
+        { "title": "Testing JavaScript", "url": "https://testingjavascript.com", "type": "FREE", "description": "Resource for learning JavaScript testing." }
+      ]
+    }
+  ]
+}
