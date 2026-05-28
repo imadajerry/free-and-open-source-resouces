@@ -36,6 +36,10 @@
           </select>
         </label>
       </div>
+      <div class="view-switch" role="tablist" aria-label="Content view">
+        <button class="view-switch__tab is-active" id="resourcesViewTab" type="button" data-view="resources" role="tab" aria-selected="true">Resources</button>
+        <button class="view-switch__tab" id="platformsViewTab" type="button" data-view="platforms" role="tab" aria-selected="false">Platforms</button>
+      </div>
       <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
         <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
         <span class="theme-switch__label" id="themeLabel">Light</span>
@@ -56,6 +60,10 @@
       <button class="drawer__close" id="drawerClose" type="button">Close</button>
     </div>
     <div class="drawer-section">
+      <div class="view-switch view-switch--drawer" role="tablist" aria-label="Content view">
+        <button class="view-switch__tab is-active" id="drawerResourcesViewTab" type="button" data-view="resources" role="tab" aria-selected="true">Resources</button>
+        <button class="view-switch__tab" id="drawerPlatformsViewTab" type="button" data-view="platforms" role="tab" aria-selected="false">Platforms</button>
+      </div>
       <label class="search search--compact">
         <span class="sr-only">Search resources</span>
         <input id="drawerSearchInput" type="search" placeholder="Search resources" />
