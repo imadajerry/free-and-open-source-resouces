@@ -80,12 +80,16 @@ function setPageVariantClass(viewKey) {
 }
 
 function syncControls(source) {
-  if (source !== 'desktop') {
+  if (searchInput && source !== 'desktop') {
     searchInput.value = state.query;
+  }
+  if (categoryFilter && source !== 'desktop') {
     categoryFilter.value = state.category;
   }
-  if (source !== 'drawer') {
+  if (drawerSearchInput && source !== 'drawer') {
     drawerSearchInput.value = state.query;
+  }
+  if (drawerCategoryFilter && source !== 'drawer') {
     drawerCategoryFilter.value = state.category;
   }
 }
