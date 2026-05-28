@@ -240,11 +240,52 @@ function updateFromDrawerControls() {
   renderResources();
 }
 
-async function init() {
-  const response = await fetch('resources.json');
-  const data = await response.json();
-  state.sections = data.sections;
+async function loadSections(viewKey) {
+  if (!dataCache[viewKey]) {
+    const response = await fetch(new URL(directoryConfigs[viewKey].file, assetRoot));
+    if (!response.ok) {
+      throw new Error(`Failed to load ${directoryConfigs[viewKey].file}`);
+    }
+    const data = await response.json();
+    dataCache[viewKey] = data.sections || [];
+  }
+  return dataCache[viewKey];
+}
 
+function updateViewChrome() {
+  const config = getAvailableViewConfig(state.activeView);
+  setPageVariantClass(state.activeView);
+
+  if (viewKicker) viewKicker.textContent = config.label;
+  if (viewTitle) viewTitle.textContent = config.label;
+  if (viewDescription) viewDescription.textContent = config.description;
+  if (searchInput) searchInput.placeholder = config.searchPlaceholder;
+  if (drawerSearchInput) drawerSearchInput.placeholder = config.searchPlaceholder;
+  if (emptyState) emptyState.textContent = config.emptyMessage;
+  document.title = `${config.label} | Learning Sources Hub`;
+}
+
+async function setActiveView(viewKey, { updateLocation = true } = {}) {
+  if (!directoryConfigs[viewKey]) return;
+
+  state.activeView = viewKey;
+  state.activeCategoryId = null;
+  updateViewChrome();
+
+  if (resultsMeta) {
+    resultsMeta.textContent = `Loading ${getAvailableViewConfig(viewKey).label.toLowerCase()}...`;
+  }
+  if (emptyState) emptyState.hidden = true;
+
+  const token = ++loadToken;
+  const sections = await loadSections(viewKey);
+  if (token !== loadToken || state.activeView !== viewKey) return;
+
+  state.sections = sections;
+  const categories = sections.map(section => section.category);
+  if (state.category !== 'all' && !categories.includes(state.category)) {
+    state.category = 'all';
+  }
   renderCategoryOptions();
   renderCategoryLinks();
   const savedTheme = localStorage.getItem('learning-sources-theme') || 'light';
