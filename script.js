@@ -56,6 +56,10 @@ function slugify(text) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
+function getAvailableViewConfig(viewKey) {
+  return directoryConfigs[viewKey] || directoryConfigs.resources;
+}
+
 function setTheme(theme) {
   state.theme = theme;
   body.classList.toggle('theme-dark', theme === 'dark');
