@@ -20,6 +20,30 @@ const drawer = document.getElementById('navDrawer');
 const drawerOverlay = document.getElementById('drawerOverlay');
 const drawerClose = document.getElementById('drawerClose');
 
+const directoryConfigs = {
+  resources: {
+    file: 'resources.json',
+    label: 'Resources',
+    description: 'Click a card to open the source in a new tab.',
+    searchPlaceholder: 'Search resources',
+    emptyMessage: 'No resources match your search or filter.'
+  },
+  platforms: {
+    file: 'platforms.json',
+    label: 'Platforms',
+    description: 'Browse coding and learning platforms with the same filters and layout.',
+    searchPlaceholder: 'Search platforms',
+    emptyMessage: 'No platforms match your search or filter.'
+  },
+  communities: {
+    file: 'communities.json',
+    label: 'Communities',
+    description: 'Browse communities, discussions, and collaboration spaces.',
+    searchPlaceholder: 'Search communities',
+    emptyMessage: 'No communities match your search or filter.'
+  }
+};
+
 const state = {
   sections: [],
   theme: 'light',
