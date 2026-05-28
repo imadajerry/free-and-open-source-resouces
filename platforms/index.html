@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platforms | Learning Sources Hub</title>
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="theme-light page-platforms" data-page="platforms" data-base="../">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar">
+    <div class="topbar__brand">
+      <span class="brand-mark">LS</span>
+      <div class="brand-copy">
+        <p class="topbar__eyebrow">Curated learning directory</p>
+        <h1>Learning Sources Hub</h1>
+      </div>
+    </div>
+
+    <nav class="topbar__nav" aria-label="Primary">
+      <div class="topbar__links">
+        <a class="topbar__link" href="../">Home</a>
+        <a class="topbar__link" href="../resources/">Resources</a>
+        <a class="topbar__link is-active" href="../platforms/" aria-current="page">Platforms</a>
+        <a class="topbar__link" href="../communities/">Communities</a>
+      </div>
+      <div class="header-controls">
+        <label class="search search--compact">
+          <span class="sr-only">Search platforms</span>
+          <input id="searchInput" type="search" placeholder="Search platforms" />
+        </label>
+        <label class="search search--compact">
+          <span class="sr-only">Filter by category</span>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
+      </div>
+      <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+        <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
+        <span class="theme-switch__label" id="themeLabel">Light</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <aside class="drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <strong>Menu</strong>
+      <button class="drawer__close" id="drawerClose" type="button">Close</button>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-nav">
+        <a href="../">Home</a>
+        <a href="../resources/">Resources</a>
+        <a href="../platforms/" aria-current="page">Platforms</a>
+        <a href="../communities/">Communities</a>
+      </div>
+      <label class="search search--compact">
+        <span class="sr-only">Search platforms</span>
+        <input id="drawerSearchInput" type="search" placeholder="Search platforms" />
+      </label>
+      <label class="search search--compact">
+        <span class="sr-only">Filter by category</span>
+        <select id="drawerCategoryFilter">
+          <option value="all">All categories</option>
+        </select>
+      </label>
+      <div class="drawer-categories">
+        <p class="drawer-categories__title">Categories</p>
+        <div id="drawerCategoryLinks"></div>
+      </div>
+    </div>
+    <button class="theme-switch theme-switch--drawer" id="drawerThemeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+      <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
+      <span class="theme-switch__label" id="drawerThemeLabel">Light</span>
+    </button>
+  </aside>
+
+  <main class="shell">
+    <section class="section section--summary" id="resources">
+      <div class="section__head">
+        <div>
+          <p class="section-kicker" id="viewKicker">Platforms</p>
+          <h2 id="viewTitle">Platforms</h2>
+          <p id="viewDescription">Browse coding and learning platforms with the same filters and layout.</p>
+        </div>
+        <p class="results" id="resultsMeta"></p>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No platforms match your search or filter.</p>
+    </section>
+
+    <div class="layout">
+      <aside class="section category-sidebar" aria-label="Category navigation">
+        <h3>Categories</h3>
+        <nav id="categoryLinks"></nav>
+      </aside>
+      <div class="content-column">
+        <div id="resourceSections"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>Learning Sources Hub</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
