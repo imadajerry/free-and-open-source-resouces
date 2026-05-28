@@ -333,6 +333,9 @@ if (pageMode === 'home') {
   initHomePage();
 } else {
   initDirectoryPage().catch(error => {
-    console.error('Failed to load resources:', error);
-  resultsMeta.textContent = 'Unable to load resources.json. Serve this page through a local web server.';
-});
+    console.error('Failed to load content:', error);
+    if (resultsMeta) {
+      resultsMeta.textContent = `Unable to load ${directoryConfigs[state.activeView].file}. Serve this page through a local web server.`;
+    }
+  });
+}
