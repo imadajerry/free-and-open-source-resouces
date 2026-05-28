@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="theme-light">
+<body class="theme-light page-home" data-page="home" data-base="./">
   <div class="bg-orb orb-1"></div>
   <div class="bg-orb orb-2"></div>
 
@@ -24,101 +24,99 @@
     </div>
 
     <nav class="topbar__nav" aria-label="Primary">
-      <div class="header-controls">
-        <label class="search search--compact">
-          <span class="sr-only">Search resources</span>
-          <input id="searchInput" type="search" placeholder="Search resources" />
-        </label>
-        <label class="search search--compact">
-          <span class="sr-only">Filter by category</span>
-          <select id="categoryFilter">
-            <option value="all">All categories</option>
-          </select>
-        </label>
-      </div>
-      <div class="view-switch" role="tablist" aria-label="Content view">
-        <button class="view-switch__tab is-active" id="resourcesViewTab" type="button" data-view="resources" role="tab" aria-selected="true">Resources</button>
-        <button class="view-switch__tab" id="platformsViewTab" type="button" data-view="platforms" role="tab" aria-selected="false">Platforms</button>
+      <div class="topbar__links">
+        <a class="topbar__link is-active" href="./" aria-current="page">Home</a>
+        <a class="topbar__link" href="resources/">Resources</a>
+        <a class="topbar__link" href="platforms/">Platforms</a>
+        <a class="topbar__link" href="communities/">Communities</a>
       </div>
       <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
         <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
         <span class="theme-switch__label" id="themeLabel">Light</span>
       </button>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navDrawer">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span class="sr-only">Open menu</span>
-      </button>
     </nav>
   </header>
 
-  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
-  <aside class="drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="drawer__head">
-      <strong>Menu</strong>
-      <button class="drawer__close" id="drawerClose" type="button">Close</button>
-    </div>
-    <div class="drawer-section">
-      <div class="view-switch view-switch--drawer" role="tablist" aria-label="Content view">
-        <button class="view-switch__tab is-active" id="drawerResourcesViewTab" type="button" data-view="resources" role="tab" aria-selected="true">Resources</button>
-        <button class="view-switch__tab" id="drawerPlatformsViewTab" type="button" data-view="platforms" role="tab" aria-selected="false">Platforms</button>
-      </div>
-      <label class="search search--compact">
-        <span class="sr-only">Search resources</span>
-        <input id="drawerSearchInput" type="search" placeholder="Search resources" />
-      </label>
-      <label class="search search--compact">
-        <span class="sr-only">Filter by category</span>
-        <select id="drawerCategoryFilter">
-          <option value="all">All categories</option>
-        </select>
-      </label>
-      <div class="drawer-categories">
-        <p class="drawer-categories__title">Categories</p>
-        <div id="drawerCategoryLinks"></div>
-      </div>
-    </div>
-    <button class="theme-switch theme-switch--drawer" id="drawerThemeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-      <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
-      <span class="theme-switch__label" id="drawerThemeLabel">Light</span>
-    </button>
-  </aside>
-
-  <main class="shell">
-    <section class="section section--summary" id="resources">
-      <div class="section__head">
-        <div>
-          <p class="section-kicker" id="viewKicker">Resources</p>
-          <h2 id="viewTitle">Resources</h2>
-          <p id="viewDescription">Click a card to open the source in a new tab.</p>
+  <main class="shell home-content">
+    <section class="section section--hero">
+      <div class="home-copy">
+        <p class="section-kicker">Overview</p>
+        <h2>Learning Sources Hub</h2>
+        <p>A compact starting point for the resources, communities, and forms used to browse and share the project data.</p>
+        <div class="home-actions">
+          <a class="cta cta--primary" href="resources/">Open Resources</a>
+          <a class="cta cta--secondary" href="platforms/">Open Platforms</a>
+          <a class="cta cta--secondary" href="communities/">Open Communities</a>
         </div>
-        <p class="results" id="resultsMeta"></p>
       </div>
-      <p class="empty-state" id="emptyState" hidden>No resources match your search or filter.</p>
     </section>
 
-    <div class="layout">
-      <aside class="section category-sidebar" aria-label="Category navigation">
-        <h3>Categories</h3>
-        <nav id="categoryLinks"></nav>
-      </aside>
-      <div class="content-column">
-        <div id="resourceSections"></div>
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <h3>Access Data</h3>
+          <p>Jump directly to the pages that contain the datasets.</p>
+        </div>
       </div>
-    </div>
+      <div class="home-grid">
+        <a class="card home-card" href="resources/">
+          <span class="card__row">
+            <span class="card__tag">DATA</span>
+            <span class="card__category">Resources</span>
+          </span>
+          <h3>Resources</h3>
+          <p>Browse learning sources and study material.</p>
+        </a>
+        <a class="card home-card" href="platforms/">
+          <span class="card__row">
+            <span class="card__tag">DATA</span>
+            <span class="card__category">Platforms</span>
+          </span>
+          <h3>Platforms</h3>
+          <p>Browse coding practice and learning platforms.</p>
+        </a>
+        <a class="card home-card" href="communities/">
+          <span class="card__row">
+            <span class="card__tag">DATA</span>
+            <span class="card__category">Communities</span>
+          </span>
+          <h3>Communities</h3>
+          <p>Browse community groups, discussions, and collaboration spaces.</p>
+        </a>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <h3>Forms</h3>
+          <p>Use the provided forms to send suggestions or feedback.</p>
+        </div>
+      </div>
+      <div class="home-grid">
+        <a class="card home-card" id="suggestions" href="https://forms.gle/FjSCqQMvxKcpzUrf7" target="_blank" rel="noreferrer">
+          <span class="card__row">
+            <span class="card__tag">FORM</span>
+            <span class="card__category">Suggestion</span>
+          </span>
+          <h3>Suggestion Form</h3>
+          <p>Share additions or corrections for the directory.</p>
+        </a>
+        <a class="card home-card" id="feedback" href="https://forms.gle/K4k8wVxZUaB3Mftu9" target="_blank" rel="noreferrer">
+          <span class="card__row">
+            <span class="card__tag">FORM</span>
+            <span class="card__category">Feedback</span>
+          </span>
+          <h3>Feedback Form</h3>
+          <p>Send notes about the layout, links, or content.</p>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="footer__inner">
-      <p>Learning Sources Hub - Built as a static resource directory.</p>
-      <div class="footer__links">
-        <a href="https://forms.gle/FjSCqQMvxKcpzUrf7" id="suggestions" target="_blank" rel="noreferrer">Suggestion Form</a>
-        <a href="https://forms.gle/K4k8wVxZUaB3Mftu9" id="feedback" target="_blank" rel="noreferrer">Feedback Form</a>
-        <a href="https://www.linkedin.com/in/jerry-lalrinmawia" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/imadajerry" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
+      <p>Learning Sources Hub</p>
     </div>
   </footer>
 
