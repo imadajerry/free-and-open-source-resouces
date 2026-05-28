@@ -226,9 +226,22 @@ async function init() {
   drawerClose.addEventListener('click', closeDrawer);
   drawerOverlay.addEventListener('click', closeDrawer);
 
+  await setActiveView(pageMode, { updateLocation: false });
 }
 
-init().catch(error => {
-  console.error('Failed to load resources:', error);
+function initHomePage() {
+  const savedTheme = localStorage.getItem('learning-sources-theme') || 'light';
+  setTheme(savedTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  }
+}
+
+if (pageMode === 'home') {
+  initHomePage();
+} else {
+  initDirectoryPage().catch(error => {
+    console.error('Failed to load resources:', error);
   resultsMeta.textContent = 'Unable to load resources.json. Serve this page through a local web server.';
 });
