@@ -288,25 +288,34 @@ async function setActiveView(viewKey, { updateLocation = true } = {}) {
   }
   renderCategoryOptions();
   renderCategoryLinks();
+  syncControls();
+  renderSections();
+}
+
+async function initDirectoryPage() {
   const savedTheme = localStorage.getItem('learning-sources-theme') || 'light';
   setTheme(savedTheme);
-  syncControls();
-  renderResources();
 
-  searchInput.addEventListener('input', updateFromDesktopControls);
-  categoryFilter.addEventListener('change', updateFromDesktopControls);
-  drawerSearchInput.addEventListener('input', updateFromDrawerControls);
-  drawerCategoryFilter.addEventListener('change', updateFromDrawerControls);
+  if (searchInput) searchInput.addEventListener('input', updateFromDesktopControls);
+  if (categoryFilter) categoryFilter.addEventListener('change', updateFromDesktopControls);
+  if (drawerSearchInput) drawerSearchInput.addEventListener('input', updateFromDrawerControls);
+  if (drawerCategoryFilter) drawerCategoryFilter.addEventListener('change', updateFromDrawerControls);
 
-  themeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
-  drawerThemeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  }
+  if (drawerThemeToggle) {
+    drawerThemeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  }
 
-  menuToggle.addEventListener('click', () => {
-    if (drawer.classList.contains('is-open')) closeDrawer();
-    else openDrawer();
-  });
-  drawerClose.addEventListener('click', closeDrawer);
-  drawerOverlay.addEventListener('click', closeDrawer);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      if (drawer && drawer.classList.contains('is-open')) closeDrawer();
+      else openDrawer();
+    });
+  }
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
 
   await setActiveView(pageMode, { updateLocation: false });
 }
