@@ -66,10 +66,10 @@ function setTheme(theme) {
   body.classList.toggle('theme-light', theme === 'light');
 
   const label = theme === 'dark' ? 'Dark' : 'Light';
-  themeLabel.textContent = label;
-  drawerThemeLabel.textContent = label;
-  themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
-  drawerThemeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  if (themeLabel) themeLabel.textContent = label;
+  if (drawerThemeLabel) drawerThemeLabel.textContent = label;
+  if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+  if (drawerThemeToggle) drawerThemeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
 
   localStorage.setItem('learning-sources-theme', theme);
 }
