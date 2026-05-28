@@ -1,4 +1,8 @@
 const body = document.body;
+const pageMode = body.dataset.page || 'home';
+const assetBase = body.dataset.base || './';
+const assetRoot = new URL(assetBase, window.location.href);
+
 const themeToggle = document.getElementById('themeToggle');
 const drawerThemeToggle = document.getElementById('drawerThemeToggle');
 const themeLabel = document.getElementById('themeLabel');
@@ -10,10 +14,12 @@ const drawerSearchInput = document.getElementById('drawerSearchInput');
 const drawerCategoryFilter = document.getElementById('drawerCategoryFilter');
 const categoryLinks = document.getElementById('categoryLinks');
 const drawerCategoryLinks = document.getElementById('drawerCategoryLinks');
-
 const resourceSections = document.getElementById('resourceSections');
 const resultsMeta = document.getElementById('resultsMeta');
 const emptyState = document.getElementById('emptyState');
+const viewKicker = document.getElementById('viewKicker');
+const viewTitle = document.getElementById('viewTitle');
+const viewDescription = document.getElementById('viewDescription');
 
 const menuToggle = document.getElementById('menuToggle');
 const drawer = document.getElementById('navDrawer');
@@ -44,7 +50,11 @@ const directoryConfigs = {
   }
 };
 
+const dataCache = {};
+let loadToken = 0;
+
 const state = {
+  activeView: pageMode === 'home' ? 'resources' : pageMode,
   sections: [],
   theme: 'light',
   query: '',
@@ -99,6 +109,8 @@ function syncControls(source) {
 }
 
 function renderCategoryOptions() {
+  if (!categoryFilter || !drawerCategoryFilter) return;
+
   const categories = state.sections.map(section => section.category);
   const options = '<option value="all">All categories</option>' +
     categories.map(category => `<option value="${category}">${category}</option>`).join('');
@@ -108,6 +120,8 @@ function renderCategoryOptions() {
 }
 
 function renderCategoryLinks() {
+  if (!categoryLinks || !drawerCategoryLinks) return;
+
   const links = state.sections.map(section => {
     const id = `category-${slugify(section.category)}`;
     return `<a href="#${id}" data-category-id="${id}">${section.category}</a>`;
@@ -129,9 +143,12 @@ function renderCategoryLinks() {
   });
 }
 
-function renderResources() {
+function renderSections() {
+  if (!resourceSections) return;
+
   const query = state.query.trim().toLowerCase();
   const selectedCategory = state.category;
+  const config = getAvailableViewConfig(state.activeView);
   let visibleCount = 0;
   let totalCount = 0;
 
@@ -174,14 +191,20 @@ function renderResources() {
     `;
   }).join('');
 
-  resultsMeta.textContent = `${visibleCount} of ${totalCount} resources shown`;
-  emptyState.hidden = visibleCount !== 0;
+  if (resultsMeta) {
+    resultsMeta.textContent = `${visibleCount} of ${totalCount} ${config.label.toLowerCase()} shown`;
+  }
+  if (emptyState) {
+    emptyState.textContent = config.emptyMessage;
+    emptyState.hidden = visibleCount !== 0;
+  }
   observeVisibleSections();
 }
 
 function setActiveCategory(categoryId) {
   state.activeCategoryId = categoryId;
   [categoryLinks, drawerCategoryLinks].forEach(container => {
+    if (!container) return;
     container.querySelectorAll('a').forEach(link => {
       const isActive = link.getAttribute('data-category-id') === categoryId;
       link.classList.toggle('is-active', isActive);
@@ -213,6 +236,8 @@ function observeVisibleSections() {
 }
 
 function closeDrawer() {
+  if (!drawer || !drawerOverlay || !menuToggle) return;
+
   drawer.classList.remove('is-open');
   drawerOverlay.hidden = true;
   drawer.setAttribute('aria-hidden', 'true');
@@ -220,6 +245,8 @@ function closeDrawer() {
 }
 
 function openDrawer() {
+  if (!drawer || !drawerOverlay || !menuToggle) return;
+
   drawer.classList.add('is-open');
   drawerOverlay.hidden = false;
   drawer.setAttribute('aria-hidden', 'false');
@@ -227,17 +254,17 @@ function openDrawer() {
 }
 
 function updateFromDesktopControls() {
-  state.query = searchInput.value;
-  state.category = categoryFilter.value;
+  if (searchInput) state.query = searchInput.value;
+  if (categoryFilter) state.category = categoryFilter.value;
   syncControls('desktop');
-  renderResources();
+  renderSections();
 }
 
 function updateFromDrawerControls() {
-  state.query = drawerSearchInput.value;
-  state.category = drawerCategoryFilter.value;
+  if (drawerSearchInput) state.query = drawerSearchInput.value;
+  if (drawerCategoryFilter) state.category = drawerCategoryFilter.value;
   syncControls('drawer');
-  renderResources();
+  renderSections();
 }
 
 async function loadSections(viewKey) {
