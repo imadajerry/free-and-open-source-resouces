@@ -70,6 +70,15 @@ function setTheme(theme) {
   localStorage.setItem('learning-sources-theme', theme);
 }
 
+function setPageVariantClass(viewKey) {
+  body.classList.remove('page-home', 'page-resources', 'page-platforms', 'page-communities');
+  if (pageMode === 'home') {
+    body.classList.add('page-home');
+    return;
+  }
+  body.classList.add(`page-${viewKey}`);
+}
+
 function syncControls(source) {
   if (source !== 'desktop') {
     searchInput.value = state.query;
