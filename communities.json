@@ -1,0 +1,178 @@
+{
+  "sections": [
+    {
+      "category": "Developer Communities",
+      "description": "Communities where developers can network, attend events, join discussions, and collaborate.",
+      "resources": [
+        {
+          "title": "Google Developer Groups (GDG)",
+          "url": "https://gdg.community.dev",
+          "type": "FREE",
+          "description": "Local developer communities, workshops, hackathons, and Google tech events."
+        },
+        {
+          "title": "Microsoft Reactor",
+          "url": "https://developer.microsoft.com/reactor/",
+          "type": "FREE",
+          "description": "Developer community events, workshops, and learning sessions."
+        },
+        {
+          "title": "Major League Hacking (MLH)",
+          "url": "https://mlh.io",
+          "type": "FREE",
+          "description": "Student developer community and global hackathon network."
+        },
+        {
+          "title": "Dev.to",
+          "url": "https://dev.to",
+          "type": "FREE",
+          "description": "Developer blogging and discussion platform."
+        },
+        {
+          "title": "Hashnode",
+          "url": "https://hashnode.com",
+          "type": "FREE",
+          "description": "Developer blogging platform and community."
+        },
+        {
+          "title": "CodeNewbie",
+          "url": "https://community.codenewbie.org",
+          "type": "FREE",
+          "description": "Beginner-friendly programming community."
+        }
+      ]
+    },
+    {
+      "category": "Discussion Communities",
+      "description": "Places to ask questions, solve doubts, and discuss technology topics.",
+      "resources": [
+        {
+          "title": "Stack Overflow",
+          "url": "https://stackoverflow.com",
+          "type": "FREE",
+          "description": "Q&A platform for programming and technical problems."
+        },
+        {
+          "title": "Reddit Programming",
+          "url": "https://www.reddit.com/r/programming/",
+          "type": "FREE",
+          "description": "Programming news, discussions, and trends."
+        },
+        {
+          "title": "Reddit Learn Programming",
+          "url": "https://www.reddit.com/r/learnprogramming/",
+          "type": "FREE",
+          "description": "Beginner-focused programming help and advice."
+        },
+        {
+          "title": "DEV Community Discussions",
+          "url": "https://dev.to",
+          "type": "FREE",
+          "description": "Tech discussions and community posts."
+        },
+        {
+          "title": "Discord Servers Discovery (Disboard)",
+          "url": "https://disboard.org",
+          "type": "FREE",
+          "description": "Find programming, AI, cybersecurity, and development Discord communities."
+        }
+      ]
+    },
+    {
+      "category": "Open Source Communities",
+      "description": "Communities focused on contributing to open source and collaboration.",
+      "resources": [
+        {
+          "title": "GitHub Discussions",
+          "url": "https://github.com/discussions",
+          "type": "FREE",
+          "description": "Project-specific discussions and contributor communities."
+        },
+        {
+          "title": "First Contributions",
+          "url": "https://firstcontributions.github.io",
+          "type": "FREE",
+          "description": "Beginner-friendly guide to making first open-source contributions."
+        },
+        {
+          "title": "Good First Issue",
+          "url": "https://goodfirstissue.dev",
+          "type": "FREE",
+          "description": "Beginner-friendly open-source issues."
+        },
+        {
+          "title": "Up For Grabs",
+          "url": "https://up-for-grabs.net",
+          "type": "FREE",
+          "description": "Curated open-source projects looking for contributors."
+        },
+        {
+          "title": "Open Source Guides",
+          "url": "https://opensource.guide",
+          "type": "FREE",
+          "description": "Resources and best practices for contributing to open source."
+        }
+      ]
+    },
+    {
+      "category": "AI & Emerging Tech Communities",
+      "description": "Communities focused on AI, LLMs, agents, and emerging technologies.",
+      "resources": [
+        {
+          "title": "Hugging Face Community",
+          "url": "https://huggingface.co",
+          "type": "FREE",
+          "description": "Community for machine learning models, datasets, and discussions."
+        },
+        {
+          "title": "LangChain Discord",
+          "url": "https://discord.gg/langchain",
+          "type": "FREE",
+          "description": "Community around LLM apps, agents, and orchestration."
+        },
+        {
+          "title": "OpenAI Developer Forum",
+          "url": "https://community.openai.com",
+          "type": "FREE",
+          "description": "Developer discussions around OpenAI APIs and tools."
+        },
+        {
+          "title": "Lablab.ai",
+          "url": "https://lablab.ai",
+          "type": "FREE",
+          "description": "AI hackathons and builder community."
+        }
+      ]
+    },
+    {
+      "category": "Student & Career Communities",
+      "description": "Communities for students, career growth, networking, and opportunities.",
+      "resources": [
+        {
+          "title": "LinkedIn",
+          "url": "https://www.linkedin.com",
+          "type": "FREE",
+          "description": "Professional networking, internships, and industry updates."
+        },
+        {
+          "title": "GitHub Campus Experts",
+          "url": "https://education.github.com/campus-experts",
+          "type": "FREE",
+          "description": "Student developer leadership community."
+        },
+        {
+          "title": "GitHub Student Developer Pack",
+          "url": "https://education.github.com/pack",
+          "type": "FREE",
+          "description": "Student benefits, tools, and opportunities."
+        },
+        {
+          "title": "Internshala",
+          "url": "https://internshala.com",
+          "type": "FREE",
+          "description": "Internships and student opportunities."
+        }
+      ]
+    }
+  ]
+}
