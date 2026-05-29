@@ -629,7 +629,6 @@ h3 {
   padding: 1rem max(1rem, calc((100vw - 1180px) / 2));
   border-top: 1px solid var(--line);
   color: var(--muted);
-  text-align: center;
   background: var(--panel);
   transition: background 300ms ease, border-color 300ms ease;
 }
@@ -641,11 +640,20 @@ h3 {
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer__links {
   display: flex;
   gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.footer__brand {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
 }
 
 .footer__links a {
@@ -653,6 +661,11 @@ h3 {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--panel-2);
+}
+
+.footer__links a:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  color: var(--text);
 }
 
 .drawer-overlay {
@@ -886,5 +899,9 @@ body.drawer-open {
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .footer__links {
+    justify-content: flex-start;
   }
 }

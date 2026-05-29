@@ -24,6 +24,19 @@ const menuToggle = document.getElementById('menuToggle');
 const drawer = document.getElementById('navDrawer');
 const drawerOverlay = document.getElementById('drawerOverlay');
 const drawerClose = document.getElementById('drawerClose');
+const footerInner = document.querySelector('.footer__inner');
+
+function renderFooter() {
+  if (!footerInner) return;
+
+  footerInner.innerHTML = `
+    <p class="footer__brand">Learning Sources Hub</p>
+    <nav class="footer__links" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/jerry-lalrinmawia/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+      <a href="https://github.com/imadajerry" target="_blank" rel="noreferrer noopener">GitHub</a>
+    </nav>
+  `;
+}
 
 const directoryConfigs = {
   resources: {
@@ -55,7 +68,8 @@ const state = {
   theme: 'light',
   query: '',
   category: 'all',
-  activeCategoryId: null
+  activeCategoryId: null,
+  expandedCategoryIds: new Set()
 };
 
 function slugify(text) {
@@ -431,3 +445,5 @@ if (pageMode === 'home') {
     }
   });
 }
+
+renderFooter();
