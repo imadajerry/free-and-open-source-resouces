@@ -15,16 +15,15 @@
   <div class="bg-orb orb-2"></div>
 
   <header class="topbar">
-    <div class="topbar__brand">
+    <a class="topbar__brand" href="./" aria-label="Learning Sources Hub home">
       <span class="brand-mark">LS</span>
       <div class="brand-copy">
         <h1>Learning Sources Hub</h1>
       </div>
-    </div>
+    </a>
 
     <nav class="topbar__nav" aria-label="Primary">
       <div class="topbar__links">
-        <a class="topbar__link is-active" href="./" aria-current="page">Home</a>
         <a class="topbar__link" href="resources/">Resources</a>
         <a class="topbar__link" href="platforms/">Platforms</a>
         <a class="topbar__link" href="communities/">Communities</a>
@@ -50,8 +49,50 @@
         </span>
         <span class="theme-switch__label sr-only" id="themeLabel">Light</span>
       </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open menu</span>
+      </button>
     </nav>
   </header>
+
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+  <aside class="drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <strong>Menu</strong>
+      <button class="drawer__close" id="drawerClose" type="button">Close</button>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-nav">
+        <a href="resources/">Resources</a>
+        <a href="platforms/">Platforms</a>
+        <a href="communities/">Communities</a>
+      </div>
+    </div>
+    <button class="theme-switch theme-switch--drawer" id="drawerThemeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
+      <span class="theme-switch__option theme-switch__option--sun" aria-hidden="true">
+        <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v3"></path>
+          <path d="M12 19v3"></path>
+          <path d="m4.93 4.93 2.12 2.12"></path>
+          <path d="m16.95 16.95 2.12 2.12"></path>
+          <path d="M2 12h3"></path>
+          <path d="M19 12h3"></path>
+          <path d="m4.93 19.07 2.12-2.12"></path>
+          <path d="m16.95 7.05 2.12-2.12"></path>
+        </svg>
+      </span>
+      <span class="theme-switch__option theme-switch__option--moon" aria-hidden="true">
+        <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 13.2A8.7 8.7 0 0 1 10.8 3 9.5 9.5 0 1 0 21 13.2Z"></path>
+        </svg>
+      </span>
+      <span class="theme-switch__label sr-only" id="drawerThemeLabel">Light</span>
+    </button>
+  </aside>
 
   <main class="shell home-content">
     <section class="section section--hero">
@@ -59,11 +100,6 @@
         <p class="section-kicker">Overview</p>
         <h2>Learning Sources Hub</h2>
         <p>A compact starting point for the resources, communities, and forms used to browse and share the project data.</p>
-        <div class="home-actions">
-          <a class="cta cta--primary" href="resources/">Open Resources</a>
-          <a class="cta cta--secondary" href="platforms/">Open Platforms</a>
-          <a class="cta cta--secondary" href="communities/">Open Communities</a>
-        </div>
       </div>
     </section>
 
