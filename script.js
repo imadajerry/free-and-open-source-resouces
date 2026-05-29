@@ -134,9 +134,18 @@ function renderCategoryLinks() {
   allLinks.forEach(link => {
     link.addEventListener('click', () => {
       const categoryId = link.getAttribute('data-category-id');
+      expandCategory(categoryId);
       setActiveCategory(categoryId);
     });
   });
+}
+
+function getCategoryId(category) {
+  return `category-${slugify(category)}`;
+}
+
+function isMobileViewport() {
+  return window.matchMedia('(max-width: 760px)').matches;
 }
 
 function renderSections() {
@@ -147,9 +156,11 @@ function renderSections() {
   const config = getAvailableViewConfig(state.activeView);
   let visibleCount = 0;
   let totalCount = 0;
+  const useAccordions = isMobileViewport();
 
   resourceSections.innerHTML = state.sections.map(section => {
-    const id = `category-${slugify(section.category)}`;
+    const id = getCategoryId(section.category);
+    const panelId = `${id}-panel`;
     const sectionResources = section.resources.map(resource => ({ ...resource, category: section.category }));
 
     const filtered = sectionResources.filter(resource => {
@@ -161,27 +172,37 @@ function renderSections() {
 
     totalCount += sectionResources.length;
     visibleCount += filtered.length;
+    const isExpanded = !useAccordions || state.expandedCategoryIds.has(id);
 
     return `
-      <section class="section category-section" id="${id}" data-category="${section.category}" ${filtered.length ? '' : 'hidden'}>
+      <section class="section category-section ${isExpanded ? 'is-expanded' : ''}" id="${id}" data-category="${section.category}" ${filtered.length ? '' : 'hidden'}>
         <div class="section__head">
           <div>
-            <h2>${section.category}</h2>
-            <p>${section.description}</p>
+            <h2>
+              <button class="category-accordion__toggle" type="button" aria-expanded="${isExpanded}" aria-controls="${panelId}">
+                <span class="category-title">
+                  <span>${section.category}</span>
+                  <span class="category-count">${filtered.length}/${sectionResources.length}</span>
+                </span>
+                <span class="category-accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h2>
+            <p class="category-description">${section.description}</p>
           </div>
-          <p class="results">${filtered.length} shown</p>
         </div>
-        <div class="grid">
-          ${filtered.map(resource => `
-            <a class="card" href="${resource.url}" target="_blank" rel="noreferrer">
-              <span class="card__row">
-                <span class="card__tag">${resource.type}</span>
-                <span class="card__category">${resource.category}</span>
-              </span>
-              <h3>${resource.title}</h3>
-              <p>${resource.description}</p>
-            </a>
-          `).join('')}
+        <div class="category-accordion__panel" id="${panelId}">
+          <div class="grid">
+            ${filtered.map(resource => `
+              <a class="card" href="${resource.url}" target="_blank" rel="noreferrer">
+                <span class="card__row">
+                  <span class="card__tag">${resource.type}</span>
+                  <span class="card__category">${resource.category}</span>
+                </span>
+                <h3>${resource.title}</h3>
+                <p>${resource.description}</p>
+              </a>
+            `).join('')}
+          </div>
         </div>
       </section>
     `;
@@ -194,7 +215,39 @@ function renderSections() {
     emptyState.textContent = config.emptyMessage;
     emptyState.hidden = visibleCount !== 0;
   }
+  initSectionAccordions();
   observeVisibleSections();
+}
+
+function expandCategory(categoryId) {
+  if (!categoryId) return;
+  state.expandedCategoryIds.add(categoryId);
+  const section = document.getElementById(categoryId);
+  if (!section) return;
+  section.classList.add('is-expanded');
+  const toggle = section.querySelector('.category-accordion__toggle');
+  if (toggle) toggle.setAttribute('aria-expanded', 'true');
+}
+
+function toggleCategorySection(section) {
+  if (!isMobileViewport()) return;
+  if (!section) return;
+  const categoryId = section.id;
+  const shouldExpand = !section.classList.contains('is-expanded');
+  section.classList.toggle('is-expanded', shouldExpand);
+  if (shouldExpand) state.expandedCategoryIds.add(categoryId);
+  else state.expandedCategoryIds.delete(categoryId);
+
+  const toggle = section.querySelector('.category-accordion__toggle');
+  if (toggle) toggle.setAttribute('aria-expanded', String(shouldExpand));
+}
+
+function initSectionAccordions() {
+  document.querySelectorAll('.category-accordion__toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      toggleCategorySection(toggle.closest('.category-section'));
+    });
+  });
 }
 
 function setActiveCategory(categoryId) {
@@ -254,6 +307,7 @@ function openDrawer() {
 function updateFromDesktopControls() {
   if (searchInput) state.query = searchInput.value;
   if (categoryFilter) state.category = categoryFilter.value;
+  if (state.category !== 'all') state.expandedCategoryIds.add(getCategoryId(state.category));
   syncControls('desktop');
   renderSections();
 }
@@ -261,6 +315,7 @@ function updateFromDesktopControls() {
 function updateFromDrawerControls() {
   if (drawerSearchInput) state.query = drawerSearchInput.value;
   if (drawerCategoryFilter) state.category = drawerCategoryFilter.value;
+  if (state.category !== 'all') state.expandedCategoryIds.add(getCategoryId(state.category));
   syncControls('drawer');
   renderSections();
 }
@@ -344,6 +399,9 @@ async function initDirectoryPage() {
   }
 
   initDrawerBehavior();
+  window.matchMedia('(max-width: 760px)').addEventListener('change', () => {
+    if (state.sections.length) renderSections();
+  });
 
   await setActiveView(pageMode, { updateLocation: false });
 }
