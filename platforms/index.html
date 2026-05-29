@@ -15,16 +15,15 @@
   <div class="bg-orb orb-2"></div>
 
   <header class="topbar">
-    <div class="topbar__brand">
+    <a class="topbar__brand" href="../" aria-label="Learning Sources Hub home">
       <span class="brand-mark">LS</span>
       <div class="brand-copy">
         <h1>Learning Sources Hub</h1>
       </div>
-    </div>
+    </a>
 
     <nav class="topbar__nav" aria-label="Primary">
       <div class="topbar__links">
-        <a class="topbar__link" href="../">Home</a>
         <a class="topbar__link" href="../resources/">Resources</a>
         <a class="topbar__link is-active" href="../platforms/" aria-current="page">Platforms</a>
         <a class="topbar__link" href="../communities/">Communities</a>
@@ -67,7 +66,6 @@
     </div>
     <div class="drawer-section">
       <div class="drawer-nav">
-        <a href="../">Home</a>
         <a href="../resources/">Resources</a>
         <a href="../platforms/" aria-current="page">Platforms</a>
         <a href="../communities/">Communities</a>
@@ -129,6 +127,7 @@
             <option value="all">All categories</option>
           </select>
         </label>
+        <button class="category-button" id="categoriesButton" type="button">Categories</button>
       </div>
       <p class="empty-state" id="emptyState" hidden>No platforms match your search or filter.</p>
     </section>
