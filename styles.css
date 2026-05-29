@@ -116,6 +116,8 @@ a {
   gap: 0.9rem;
   align-items: center;
   min-width: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .brand-mark {
@@ -467,12 +469,6 @@ h3 {
   line-height: 1.6;
 }
 
-.home-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-}
-
 .home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -653,10 +649,17 @@ h3 {
   align-content: start;
   gap: 0.8rem;
   backdrop-filter: blur(18px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawer.is-open {
   transform: translateX(0);
+}
+
+body.drawer-open {
+  overflow: hidden;
 }
 
 .drawer__head {
@@ -707,6 +710,7 @@ h3 {
   }
 
   .brand-copy,
+  .topbar__links,
   .topbar__nav > .theme-switch {
     display: none;
   }
@@ -729,7 +733,27 @@ h3 {
   }
 
   .category-sidebar {
-    position: static;
+    display: none;
+  }
+
+  .summary-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .summary-controls > * {
+    width: 100%;
+  }
+
+  .search--compact input,
+  .search--compact select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .category-button {
+    display: inline-flex;
+    width: 100%;
   }
 
   #categoryLinks {
