@@ -18,7 +18,6 @@
     <div class="topbar__brand">
       <span class="brand-mark">LS</span>
       <div class="brand-copy">
-        <p class="topbar__eyebrow">Curated learning directory</p>
         <h1>Learning Sources Hub</h1>
       </div>
     </div>
@@ -30,21 +29,26 @@
         <a class="topbar__link is-active" href="../platforms/" aria-current="page">Platforms</a>
         <a class="topbar__link" href="../communities/">Communities</a>
       </div>
-      <div class="header-controls">
-        <label class="search search--compact">
-          <span class="sr-only">Search platforms</span>
-          <input id="searchInput" type="search" placeholder="Search platforms" />
-        </label>
-        <label class="search search--compact">
-          <span class="sr-only">Filter by category</span>
-          <select id="categoryFilter">
-            <option value="all">All categories</option>
-          </select>
-        </label>
-      </div>
       <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-        <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
-        <span class="theme-switch__label" id="themeLabel">Light</span>
+        <span class="theme-switch__option theme-switch__option--sun" aria-hidden="true">
+          <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v3"></path>
+            <path d="M12 19v3"></path>
+            <path d="m4.93 4.93 2.12 2.12"></path>
+            <path d="m16.95 16.95 2.12 2.12"></path>
+            <path d="M2 12h3"></path>
+            <path d="M19 12h3"></path>
+            <path d="m4.93 19.07 2.12-2.12"></path>
+            <path d="m16.95 7.05 2.12-2.12"></path>
+          </svg>
+        </span>
+        <span class="theme-switch__option theme-switch__option--moon" aria-hidden="true">
+          <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 13.2A8.7 8.7 0 0 1 10.8 3 9.5 9.5 0 1 0 21 13.2Z"></path>
+          </svg>
+        </span>
+        <span class="theme-switch__label sr-only" id="themeLabel">Light</span>
       </button>
       <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navDrawer">
         <span></span>
@@ -84,8 +88,25 @@
       </div>
     </div>
     <button class="theme-switch theme-switch--drawer" id="drawerThemeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-      <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
-      <span class="theme-switch__label" id="drawerThemeLabel">Light</span>
+      <span class="theme-switch__option theme-switch__option--sun" aria-hidden="true">
+        <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v3"></path>
+          <path d="M12 19v3"></path>
+          <path d="m4.93 4.93 2.12 2.12"></path>
+          <path d="m16.95 16.95 2.12 2.12"></path>
+          <path d="M2 12h3"></path>
+          <path d="M19 12h3"></path>
+          <path d="m4.93 19.07 2.12-2.12"></path>
+          <path d="m16.95 7.05 2.12-2.12"></path>
+        </svg>
+      </span>
+      <span class="theme-switch__option theme-switch__option--moon" aria-hidden="true">
+        <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 13.2A8.7 8.7 0 0 1 10.8 3 9.5 9.5 0 1 0 21 13.2Z"></path>
+        </svg>
+      </span>
+      <span class="theme-switch__label sr-only" id="drawerThemeLabel">Light</span>
     </button>
   </aside>
 
@@ -94,10 +115,20 @@
       <div class="section__head">
         <div>
           <p class="section-kicker" id="viewKicker">Platforms</p>
-          <h2 id="viewTitle">Platforms</h2>
-          <p id="viewDescription">Browse coding and learning platforms with the same filters and layout.</p>
         </div>
         <p class="results" id="resultsMeta"></p>
+      </div>
+      <div class="summary-controls">
+        <label class="search search--compact">
+          <span class="sr-only">Search platforms</span>
+          <input id="searchInput" type="search" placeholder="Search platforms" />
+        </label>
+        <label class="search search--compact">
+          <span class="sr-only">Filter by category</span>
+          <select id="categoryFilter">
+            <option value="all">All categories</option>
+          </select>
+        </label>
       </div>
       <p class="empty-state" id="emptyState" hidden>No platforms match your search or filter.</p>
     </section>

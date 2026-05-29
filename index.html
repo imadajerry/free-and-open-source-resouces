@@ -18,7 +18,6 @@
     <div class="topbar__brand">
       <span class="brand-mark">LS</span>
       <div class="brand-copy">
-        <p class="topbar__eyebrow">Curated learning directory</p>
         <h1>Learning Sources Hub</h1>
       </div>
     </div>
@@ -31,8 +30,25 @@
         <a class="topbar__link" href="communities/">Communities</a>
       </div>
       <button class="theme-switch" id="themeToggle" type="button" aria-pressed="false" aria-label="Toggle theme">
-        <span class="theme-switch__track"><span class="theme-switch__thumb"></span></span>
-        <span class="theme-switch__label" id="themeLabel">Light</span>
+        <span class="theme-switch__option theme-switch__option--sun" aria-hidden="true">
+          <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v3"></path>
+            <path d="M12 19v3"></path>
+            <path d="m4.93 4.93 2.12 2.12"></path>
+            <path d="m16.95 16.95 2.12 2.12"></path>
+            <path d="M2 12h3"></path>
+            <path d="M19 12h3"></path>
+            <path d="m4.93 19.07 2.12-2.12"></path>
+            <path d="m16.95 7.05 2.12-2.12"></path>
+          </svg>
+        </span>
+        <span class="theme-switch__option theme-switch__option--moon" aria-hidden="true">
+          <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21 13.2A8.7 8.7 0 0 1 10.8 3 9.5 9.5 0 1 0 21 13.2Z"></path>
+          </svg>
+        </span>
+        <span class="theme-switch__label sr-only" id="themeLabel">Light</span>
       </button>
     </nav>
   </header>
