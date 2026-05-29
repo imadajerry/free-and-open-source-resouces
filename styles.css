@@ -542,6 +542,36 @@ h3 {
   scroll-margin-top: 6.2rem;
 }
 
+.category-accordion__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.category-accordion__icon {
+  display: none;
+}
+
+.category-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.category-count {
+  color: var(--muted);
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -770,6 +800,87 @@ body.drawer-open {
   .section__head {
     flex-direction: column;
     align-items: center;
+  }
+
+  .category-section {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .category-section .section__head {
+    display: block;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .category-description {
+    display: none;
+  }
+
+  .category-accordion__toggle {
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .category-title {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .category-accordion__icon {
+    width: 0.7rem;
+    height: 0.7rem;
+    display: inline-block;
+    flex: 0 0 auto;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 180ms ease;
+  }
+
+  .category-section.is-expanded .category-accordion__icon {
+    transform: rotate(225deg);
+  }
+
+  .category-accordion__panel {
+    display: none;
+    padding: 0 1rem 1rem;
+  }
+
+  .category-section.is-expanded .category-accordion__panel {
+    display: block;
+  }
+
+  .category-section .grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 0.8rem;
+    margin-right: -1rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0 1rem 0.1rem 0;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .category-section .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-section .card {
+    flex: 0 0 min(82%, 21rem);
+    min-height: 170px;
+    scroll-snap-align: start;
+  }
+
+  .card:hover {
+    transform: none;
   }
 
   .footer__inner {
