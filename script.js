@@ -12,6 +12,7 @@ const searchInput = document.getElementById('searchInput');
 const categoryFilter = document.getElementById('categoryFilter');
 const drawerSearchInput = document.getElementById('drawerSearchInput');
 const drawerCategoryFilter = document.getElementById('drawerCategoryFilter');
+const categoriesButton = document.getElementById('categoriesButton');
 const categoryLinks = document.getElementById('categoryLinks');
 const drawerCategoryLinks = document.getElementById('drawerCategoryLinks');
 const resourceSections = document.getElementById('resourceSections');
@@ -237,6 +238,7 @@ function closeDrawer() {
   drawerOverlay.hidden = true;
   drawer.setAttribute('aria-hidden', 'true');
   menuToggle.setAttribute('aria-expanded', 'false');
+  body.classList.remove('drawer-open');
 }
 
 function openDrawer() {
@@ -246,6 +248,7 @@ function openDrawer() {
   drawerOverlay.hidden = false;
   drawer.setAttribute('aria-hidden', 'false');
   menuToggle.setAttribute('aria-expanded', 'true');
+  body.classList.add('drawer-open');
 }
 
 function updateFromDesktopControls() {
@@ -260,6 +263,18 @@ function updateFromDrawerControls() {
   if (drawerCategoryFilter) state.category = drawerCategoryFilter.value;
   syncControls('drawer');
   renderSections();
+}
+
+function initDrawerBehavior() {
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      if (drawer && drawer.classList.contains('is-open')) closeDrawer();
+      else openDrawer();
+    });
+  }
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+  if (categoriesButton) categoriesButton.addEventListener('click', openDrawer);
 }
 
 async function loadSections(viewKey) {
@@ -328,14 +343,7 @@ async function initDirectoryPage() {
     drawerThemeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
   }
 
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      if (drawer && drawer.classList.contains('is-open')) closeDrawer();
-      else openDrawer();
-    });
-  }
-  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+  initDrawerBehavior();
 
   await setActiveView(pageMode, { updateLocation: false });
 }
@@ -347,6 +355,12 @@ function initHomePage() {
   if (themeToggle) {
     themeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
   }
+
+  if (drawerThemeToggle) {
+    drawerThemeToggle.addEventListener('click', () => setTheme(state.theme === 'dark' ? 'light' : 'dark'));
+  }
+
+  initDrawerBehavior();
 }
 
 if (pageMode === 'home') {
