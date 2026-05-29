@@ -18,8 +18,6 @@ const resourceSections = document.getElementById('resourceSections');
 const resultsMeta = document.getElementById('resultsMeta');
 const emptyState = document.getElementById('emptyState');
 const viewKicker = document.getElementById('viewKicker');
-const viewTitle = document.getElementById('viewTitle');
-const viewDescription = document.getElementById('viewDescription');
 
 const menuToggle = document.getElementById('menuToggle');
 const drawer = document.getElementById('navDrawer');
@@ -30,21 +28,18 @@ const directoryConfigs = {
   resources: {
     file: 'resources.json',
     label: 'Resources',
-    description: 'Click a card to open the source in a new tab.',
     searchPlaceholder: 'Search resources',
     emptyMessage: 'No resources match your search or filter.'
   },
   platforms: {
     file: 'platforms.json',
     label: 'Platforms',
-    description: 'Browse coding and learning platforms with the same filters and layout.',
     searchPlaceholder: 'Search platforms',
     emptyMessage: 'No platforms match your search or filter.'
   },
   communities: {
     file: 'communities.json',
     label: 'Communities',
-    description: 'Browse communities, discussions, and collaboration spaces.',
     searchPlaceholder: 'Search communities',
     emptyMessage: 'No communities match your search or filter.'
   }
@@ -284,8 +279,6 @@ function updateViewChrome() {
   setPageVariantClass(state.activeView);
 
   if (viewKicker) viewKicker.textContent = config.label;
-  if (viewTitle) viewTitle.textContent = config.label;
-  if (viewDescription) viewDescription.textContent = config.description;
   if (searchInput) searchInput.placeholder = config.searchPlaceholder;
   if (drawerSearchInput) drawerSearchInput.placeholder = config.searchPlaceholder;
   if (emptyState) emptyState.textContent = config.emptyMessage;
